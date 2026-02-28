@@ -1,0 +1,8 @@
+# Compilado
+  nvcc -c src/MPI-CUDA.cu -o build/MPI-CUDA.o
+  mpicc -o build/MPI-CUDA.exe build/MPI-CUDA.o -L/usr/local/cuda/lib64/ -lcudart -lstdc++
+
+# Ejecucion
+  mpirun -np P ./build/MPI-CUDA.exe k -O < data.txt
+
+donde O = {V: modo verboso, S: modo silencioso}
