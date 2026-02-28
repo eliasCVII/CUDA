@@ -1,0 +1,20 @@
+services:
+  cuda-dev:
+    build: .
+    container_name: cuda-dev
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    # This keeps the container running so your LSP can connect to it
+    tty: true
+    stdin_open: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
