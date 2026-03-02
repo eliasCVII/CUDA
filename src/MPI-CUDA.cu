@@ -1,11 +1,11 @@
 /*****************************************************
  * Nombre del archivo: MPI-CUDA.cu
- * Programmer:
+ * Programmer: Elias Contreras V, Martin Gomez J
  * Santiago de Chile, 28-2-2026
  ****************************************************/
 
-#include <cuda_runtime.h>
-#include <mpi/mpi.h>
+#include "/usr/include/mpich/mpi.h"
+// #include <mpi/mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,6 +22,7 @@
  *
  */
 void Usage(char *arg) {
+
   printf("\nUsage: %s k [-V | -S] < data.txt\n", arg);
   fflush(stdout);
 }
